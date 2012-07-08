@@ -1,0 +1,10 @@
+[user]
+    name = Noah Watkins
+    email = noahwatkins@gmail.com
+
+[color]
+    diff = auto
+    ui = true
+
+[core]
+    editor = /usr/bin/vim
