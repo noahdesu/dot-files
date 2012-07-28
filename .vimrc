@@ -25,3 +25,6 @@ set spelllang=en_us
 
 " Color, font, syntax
 syntax enable
+
+autocmd filetype c setlocal noexpandtab ts=8 sw=8 sws=8
+autocmd filetype ruby setlocal expandtab ts=2 sw=2 sws=2
