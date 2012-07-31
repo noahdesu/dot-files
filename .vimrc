@@ -29,3 +29,5 @@ color molokai
 
 autocmd filetype c setlocal noexpandtab ts=8 sw=8 sws=8
 autocmd filetype ruby setlocal expandtab ts=2 sw=2 sws=2
+autocmd filetype sh setlocal expandtab ts=2 sw=2 sws=2
+autocmd filetype python setlocal expandtab ts=4 sw=4 sws=4
