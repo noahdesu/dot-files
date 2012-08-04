@@ -27,6 +27,9 @@ set spelllang=en_us
 syntax enable
 color molokai
 
+" override .md -> modula2 mapping
+au BufNewFile,BufRead *.md set filetype=markdown
+
 autocmd filetype c setlocal noexpandtab ts=8 sw=8 sws=8
 autocmd filetype ruby setlocal expandtab ts=2 sw=2 sws=2
 autocmd filetype sh setlocal expandtab ts=2 sw=2 sws=2
