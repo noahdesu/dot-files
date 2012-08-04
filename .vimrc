@@ -27,6 +27,17 @@ set spelllang=en_us
 syntax enable
 color molokai
 
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set sws=4
+set linebreak
+set tw=78
+set autoindent
+set smartindent
+set nowrap
+
 " override .md -> modula2 mapping
 au BufNewFile,BufRead *.md set filetype=markdown
 
