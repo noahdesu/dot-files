@@ -26,6 +26,7 @@ set spelllang=en_us
 " Color, font, syntax
 syntax enable
 color molokai
+set guifont=Inconsolata\ 12
 
 set expandtab
 set smarttab
