@@ -9,3 +9,4 @@ link .gitconfig
 link .tmux.conf
 link .vimrc
 link .vim
+link .fonts
