@@ -11,10 +11,6 @@ let g:mapleader = ","
 map <leader>e :e! ~/.vimrc<cr>
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
-" clear search with escape in normal mode
-" aka: no more /asdf
-nnoremap <esc> :noh<return><esc>
-
 " line numbers and status bar
 set number
 set showmode
