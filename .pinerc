@@ -343,7 +343,9 @@ incoming-folders=
 # List of directories where saved-message folders may be. First one is
 # the default for Saves. Example: Main {host1}mail/[], Desktop mail\[]
 # Syntax: optnl-label {optnl-imap-hostname}optnl-directory-path[]
-folder-collections=
+folder-collections=mail/[],
+	Inktank {imap.gmail.com/ssl/user=noah.watkins@inktank.com}[],
+	UcscSoe {imap.gmail.com/ssl/user=jayhawk@soe.ucsc.edu}[]
 
 # List, only needed if nntp-server not set, or news is on a different host
 # than used for NNTP posting. Examples: News *[] or News *{host3/nntp}[]
@@ -472,7 +474,8 @@ personal-print-command=
 personal-print-category=
 
 # Patterns and their actions are stored here.
-patterns-roles=
+patterns-roles=LIT:pattern="/NICK=Inktank/FLDTYPE=SPEC/FOLDER={imap.gmail.com\/ssl\/user=noah.watkins@inktank.com}INBOX" action="/ROLE=1/FROM=Noah Watkins <noah.watkins@inktank.com>/SMTP=smtp.gmail.com\/tls\/user=noah.watkins@inktank.com/RTYPE=YES/FTYPE=YES/CTYPE=YES",
+	LIT:pattern="/NICK=UcscSoe/FLDTYPE=SPEC/FOLDER={imap.gmail.com\/ssl\/user=jayhawk@soe.ucsc.edu}INBOX" action="/ROLE=1/FROM=Noah Watkins <jayhawk@cs.ucsc.edu>/SMTP=smtp.gmail.com\/ssl\/user=jayhawk@soe.ucsc.edu/RTYPE=YES/FTYPE=YES/CTYPE=YES"
 
 # Patterns and their actions are stored here.
 patterns-filters2=
