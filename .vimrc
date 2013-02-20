@@ -22,6 +22,8 @@ set smartcase
 set hlsearch
 set incsearch
 set spelllang=en_us
+" Clear search highlight
+nmap \q :nohlsearch<CR>
 
 " Color, font, syntax
 syntax enable
