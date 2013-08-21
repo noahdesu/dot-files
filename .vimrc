@@ -45,8 +45,10 @@ set nowrap
 " override .md -> modula2 mapping
 au BufNewFile,BufRead *.md set filetype=markdown
 
+autocmd filetype tex setlocal nocindent nosmartindent noautoindent
 autocmd filetype c setlocal noexpandtab ts=8 sw=8 sws=8
 autocmd filetype cpp setlocal expandtab ts=2 sw=2 sws=2
+autocmd filetype javascript setlocal expandtab ts=2 sw=2 sws=2
 autocmd filetype java setlocal expandtab ts=2 sw=2 sws=2
 autocmd filetype ruby setlocal expandtab ts=2 sw=2 sws=2
 autocmd filetype sh setlocal expandtab ts=2 sw=2 sws=2
