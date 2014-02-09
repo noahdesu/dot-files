@@ -42,6 +42,8 @@ set autoindent
 set smartindent
 set nowrap
 
+set cinoptions=g1,h1
+
 " override .md -> modula2 mapping
 au BufNewFile,BufRead *.md set filetype=markdown
 
