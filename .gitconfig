@@ -9,3 +9,6 @@
 [core]
     editor = /usr/bin/vim
     excludesfile = ~/.gitignore
+
+[log]
+    decorate = full
