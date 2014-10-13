@@ -17,3 +17,5 @@ libsnappy-dev
 libleveldb-dev
 libaio-dev
 xfslibs-dev
+libboost-program-options-dev
+libboost-thread-dev
