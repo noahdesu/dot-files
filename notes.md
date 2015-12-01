@@ -10,3 +10,5 @@ noop
 ```
 
 Install `powertop` and enable tunables. Configuration can be expored and loaded on bootup. http://askubuntu.com/questions/112705/how-do-i-make-powertop-changes-permanent
+
+gnome-tweak-tool
