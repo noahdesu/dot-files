@@ -14,3 +14,5 @@ link .vimrc
 link .vim
 link .fonts
 _link .global.gitignore .gitignore
+
+sudo apt-get -y install vim tmux
