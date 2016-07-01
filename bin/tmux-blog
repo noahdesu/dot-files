@@ -1,0 +1,6 @@
+#!/bin/sh
+cd $HOME/src/noahdesu.github.com
+tmux new-session -n vim -d 'vim'
+tmux new-window -n bash
+tmux new-window -n server 'bundle exec jekyll serve -Dw'
+tmux -2 attach-session -d
