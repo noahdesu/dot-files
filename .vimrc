@@ -10,6 +10,86 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'tpope/vim-fugitive'
+Plugin 'tomasr/molokai'
+Plugin 'bufexplorer.zip'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" don't restrict to vi
+set nocompatible
+
+" enable filetype plugin
+filetype plugin on
+filetype indent on
+
+" Leader and vimrc editting
+let mapleader = ","
+let g:mapleader = ","
+map <leader>e :e! ~/.vimrc<cr>
+autocmd! bufwritepost .vimrc source ~/.vimrc
+
+" line numbers and status bar
+set number
+set showmode
+set history=700
+
+" Search, case, spelling
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set spelllang=en_us
+" Clear search highlight
+nmap \q :nohlsearch<CR>
+
+" Color, font, syntax
+syntax enable
+color molokai
+set guifont=Inconsolata\ 12
+
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set sws=4
+set linebreak
+set tw=78
+set cindent
+set autoindent
+set smartindent
+set nowrap
+
+set backspace=indent,eol,start
+
+set cinoptions=g1,h1
+
+" override .md -> modula2 mapping
+au BufNewFile,BufRead *.md set filetype=markdown
+
+autocmd filetype tex setlocal nocindent nosmartindent noautoindent
+autocmd filetype c setlocal noexpandtab ts=8 sw=8 sws=8
+autocmd filetype cpp setlocal expandtab ts=2 sw=2 sws=2
+autocmd filetype javascript setlocal expandtab ts=2 sw=2 sws=2
+autocmd filetype java setlocal expandtab ts=2 sw=2 sws=2
+autocmd filetype ruby setlocal expandtab ts=2 sw=2 sws=2
+autocmd filetype sh setlocal expandtab ts=2 sw=2 sws=2
+autocmd filetype python setlocal expandtab ts=4 sw=4 sws=4
+autocmd filetype gitcommit setlocal tw=72
+
+" setup the bottom status bar
+set laststatus=2
+set statusline=   " clear the statusline for when vimrc is reloaded
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%f\                          " file name
+set statusline+=%h%m%r%w                     " flags
+set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
+set statusline+=%{&fileformat},              " file format
+set statusline+=%{fugitive#statusline()}]    " git branch/status
+set statusline+=%=                           " right align
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
+set statusline+=%b,0x%-8B\                   " current char
+set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
