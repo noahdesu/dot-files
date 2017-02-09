@@ -11,3 +11,25 @@ firewall-cmd --set-default-zone drop
 firewall-cmd --state
 firewall-cmd --get-active-zones
 ```
+
+```
+dnf update -y
+dnf install -y vim-enhanced
+```
+
+```
+cat << 'EOF' > $HOME/.ssh/config
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github
+EOF
+chmod 600 $HOME/.ssh/config
+```
+
+```
+mkdir $HOME/src
+pushd $HOME/src
+git clone --recursive git@github.com:noahdesu/zlog.git
+popd
+```
