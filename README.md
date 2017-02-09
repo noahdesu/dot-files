@@ -31,5 +31,6 @@ chmod 600 $HOME/.ssh/config
 mkdir $HOME/src
 pushd $HOME/src
 git clone --recursive git@github.com:noahdesu/zlog.git
+git clone git@github.com:noahdesu/dot-files.git
 popd
 ```
