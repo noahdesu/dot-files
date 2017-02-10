@@ -14,7 +14,7 @@ firewall-cmd --get-active-zones
 
 ```
 dnf update -y
-dnf install -y vim-enhanced
+dnf install -y vim-enhanced tmux
 ```
 
 ```
