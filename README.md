@@ -14,7 +14,7 @@ firewall-cmd --get-active-zones
 
 ```
 dnf update -y
-dnf install -y vim-enhanced tmux texlive texlive-pbox texlive-appendix
+dnf install -y vim-enhanced tmux texlive texlive-pbox texlive-appendix autoconf libtool
 ```
 
 ```
