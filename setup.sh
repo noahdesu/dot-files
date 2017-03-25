@@ -10,8 +10,10 @@ function link() {
 
 link .gitconfig
 link .tmux.conf
-link .vimrc
-link .vim
+_link vim2/.vim .vim
+_link vim2/.vimrc .vimrc
+#link .vim
+#link .vimrc
 link .fonts
 _link .global.gitignore .gitignore
 
