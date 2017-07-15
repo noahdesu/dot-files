@@ -27,6 +27,10 @@ dnf install -y vim-enhanced tmux texlive texlive-pbox texlive-appendix autoconf 
 ```
 
 ```
+setup2.sh
+```
+
+```
 cat << 'EOF' > $HOME/.ssh/config
 Host github.com
     HostName github.com
@@ -34,15 +38,4 @@ Host github.com
     IdentityFile ~/.ssh/github
 EOF
 chmod 600 $HOME/.ssh/config
-```
-
-```
-mkdir $HOME/src
-pushd $HOME/src
-git clone --recursive git@github.com:noahdesu/zlog.git
-git clone --recursive git@github.com:noahdesu/dot-files.git
-git clone --recursive git@github.com:noahdesu/java-legion.git
-git clone --recursive git@github.com:noahdesu/thesis.git
-git clone --recursive git@github.com:ceph/ceph.git
-popd
 ```
