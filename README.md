@@ -5,7 +5,11 @@ bash <(wget -O - https://raw.githubusercontent.com/noahdesu/dot-files/master/go.
 
 vim ~/.local/share/applications/mimeapps.list
 
-# Beta Setup Notes
+# Notes
+
+```
+sudo passwd -l root
+```
 
 ```bash
 firewall-cmd --get-default-zone
@@ -16,6 +20,9 @@ firewall-cmd --get-active-zones
 
 ```
 dnf update -y
+```
+
+```
 dnf install -y vim-enhanced tmux texlive texlive-pbox texlive-appendix autoconf libtool
 ```
 
