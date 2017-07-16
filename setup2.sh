@@ -1,35 +1,52 @@
 #!/bin/bash
 
-set -x
 set -e
 
-function _link() {
-  rm -f $HOME/$2
-  ln -s $PWD/$1 $HOME/$2 || true
+function rootuser {
+  echo "##### disable root password"
+  sudo passwd -l root
+  echo "====> done"
 }
 
-function link() {
-  _link $1 $1
+function firewall {
+  echo "##### setting up firewalld"
+  local curr=$(firewall-cmd --get-default-zone)
+  if [ "x$curr" != "xdrop" ]; then
+    sudo firewall-cmd --set-default-zone drop
+  fi
+  firewall-cmd --get-active-zones
+  echo "status: $(sudo firewall-cmd --state)"
+  echo "====> done"
 }
 
-sudo dnf update -y
-sudo dnf install -y git vim-enhanced docker tmux
+function packages {
+  echo "##### install software packages"
 
-link .gitconfig
-link .tmux.conf
-link .fonts
+  sudo dnf update -y
+  sudo dnf install -y git vim-enhanced docker tmux
 
-sudo systemctl enable docker
-sudo systemctl start docker
+  if ! systemctl is-enabled docker.service; then
+    sudo systemctl enable docker
+    sudo systemctl start docker
+  fi
 
-mkdir -p $HOME/src
+  if [ ! -e .setup.packages ]; then
+    touch .setup.packages
+    echo "====> restart computer..."
+    exit 0
+  fi
 
-function getrepo {
+  echo "====> done"
+}
+
+function clonerepo {
   local ghrepo=$1
+
   if [[ ! $ghrepo =~ \/([a-zA-Z0-1\-]+)\.git ]]; then
     echo "invalid github repo: $ghrepo"
     exit 1
   fi
+
   local dir=$HOME/src/${BASH_REMATCH[1]}
   if [ ! -d "$dir" ]; then
     tmpdir=$(mktemp -d)
@@ -38,15 +55,35 @@ function getrepo {
   fi
 }
 
-getrepo noahdesu/zlog.git
-getrepo noahdesu/dot-files.git
-getrepo noahdesu/thesis.git
-getrepo ceph/ceph.git
+function gitrepos {
+  mkdir -p $HOME/src
 
-pushd $HOME/src/zlog
-./install-deps.sh
-popd
+  clonerepo noahdesu/zlog.git
+  clonerepo noahdesu/thesis.git
+  clonerepo ceph/ceph.git
 
-pushd $HOME/src/ceph
-./install-deps.sh
-popd
+  pushd $HOME/src/zlog
+  ./install-deps.sh
+  popd
+
+  pushd $HOME/src/ceph
+  ./install-deps.sh
+  popd
+
+  pushd $HOME/src/thesis
+  ./build.sh
+  popd
+}
+
+function link() {
+  rm -f $HOME/$1
+  ln -s $PWD/$1 $HOME/$1 || true
+}
+
+rootuser
+firewall
+link .gitconfig
+link .tmux.conf
+link .fonts
+packages
+gitrepos
