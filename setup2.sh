@@ -2,6 +2,11 @@
 
 set -e
 
+sudo -v
+
+# sudo keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 function rootuser {
   echo "##### disable root password"
   sudo passwd -l root
@@ -23,8 +28,9 @@ function packages {
   echo "##### install software packages"
 
   sudo dnf update -y
-  sudo dnf install -y git vim-enhanced docker tmux
+  sudo dnf install -y git vim-enhanced docker tmux pass
 
+  echo "enable/start docker"
   if ! systemctl is-enabled docker.service; then
     sudo systemctl enable docker
     sudo systemctl start docker
