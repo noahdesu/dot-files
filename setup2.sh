@@ -13,7 +13,7 @@ function link() {
 }
 
 sudo dnf update -y
-sudo dnf install -y vim-enhanced docker tmux
+sudo dnf install -y git vim-enhanced docker tmux
 
 link .gitconfig
 link .tmux.conf
