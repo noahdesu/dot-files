@@ -28,7 +28,8 @@ function packages {
   echo "##### install software packages"
 
   sudo dnf update -y
-  sudo dnf install -y git vim-enhanced docker tmux pass
+  sudo dnf install -y git vim-enhanced docker tmux pass \
+	  libu2f-host
 
   echo "enable/start docker"
   if ! systemctl is-enabled docker.service; then
