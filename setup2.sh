@@ -67,7 +67,10 @@ function gitrepos {
 
   clonerepo noahdesu/zlog.git
   clonerepo noahdesu/thesis.git
+  clonerepo noahdesu/newsite.git
   clonerepo ceph/ceph.git
+  clonerepo noahdesu/decl-storage-hs17
+  clonerepo michaelsevilla/malacology-popper
 
   pushd $HOME/src/zlog
   ./install-deps.sh

@@ -5,6 +5,8 @@ bash <(wget -O - https://raw.githubusercontent.com/noahdesu/dot-files/master/go.
 
 vim ~/.local/share/applications/mimeapps.list
 
+Gnome terminal profile settings
+
 # Notes
 
 ```
