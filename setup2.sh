@@ -29,7 +29,7 @@ function packages {
 
   sudo dnf update -y
   sudo dnf install -y git vim-enhanced docker tmux pass \
-	  libu2f-host
+	  libu2f-host clang numpy
 
   echo "enable/start docker"
   if ! systemctl is-enabled docker.service; then
@@ -68,7 +68,10 @@ function gitrepos {
   clonerepo noahdesu/zlog.git
   clonerepo noahdesu/thesis.git
   clonerepo noahdesu/newsite.git
+  clonerepo noahdesu/noahdesu.github.com.git
+  clonerepo noahdesu/fuse-boilerplate.git
   clonerepo ceph/ceph.git
+  clonerepo torvalds/linux.git
   clonerepo noahdesu/decl-storage-hs17
   clonerepo michaelsevilla/malacology-popper
 
