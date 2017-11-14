@@ -29,7 +29,9 @@ function packages {
 
   sudo dnf update -y
   sudo dnf install -y git vim-enhanced docker tmux pass \
-	  libu2f-host clang numpy
+	  libu2f-host clang numpy ccache ctags
+
+  ccache -M 30G
 
   echo "enable/start docker"
   if ! systemctl is-enabled docker.service; then
@@ -70,10 +72,15 @@ function gitrepos {
   clonerepo noahdesu/newsite.git
   clonerepo noahdesu/noahdesu.github.com.git
   clonerepo noahdesu/fuse-boilerplate.git
-  clonerepo ceph/ceph.git
   clonerepo torvalds/linux.git
   clonerepo noahdesu/decl-storage-hs17
   clonerepo michaelsevilla/malacology-popper
+
+  clonerepo ceph/ceph.git
+  pushd $HOME/src/ceph
+  git remote add me git@github.com:noahdesu/ceph.git
+  git fetch me
+  popd
 
   pushd $HOME/src/zlog
   ./install-deps.sh

@@ -7,6 +7,9 @@ vim ~/.local/share/applications/mimeapps.list
 
 Gnome terminal profile settings
 
+sudoers
+Defaults    env_reset,timestamp_timeout=30
+
 # Notes
 
 ```
