@@ -1,0 +1,24 @@
+call plug#begin()
+Plug 'nanotech/jellybeans.vim'
+call plug#end()
+
+syntax enable
+
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+try
+  colorscheme jellybeans
+catch
+endtry
+
+if has("gui_running")
+  set guioptions-=T
+  set guioptions-=e
+  set t_Co=256
+  set guitablabel=%M\ %t
+endif
+
+set encoding=utf8
+set ffs=unix,dos,mac
