@@ -2,10 +2,10 @@
 
 set -e
 
-sudo -v
-
-# sudo keep-alive: update existing sudo time stamp if set, otherwise do nothing.
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+#sudo -v
+#
+## sudo keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+#while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 function rootuser {
   echo "##### disable root password"
@@ -64,7 +64,7 @@ function clonerepo {
 
     if [ ! -z "${cmds}" ]; then
       pushd ${dir}
-      exec ${cmds} || true
+      eval ${cmds} || true
       popd
     fi
   fi
@@ -100,10 +100,11 @@ function link() {
   ln -s $PWD/$1 $HOME/$1 || true
 }
 
-rootuser
-firewall
+#rootuser
+#firewall
 link .gitconfig
 link .tmux.conf
-link .fonts
-packages
+## TODO: ~/Library/Fonts on macOS
+#link .fonts
+#packages
 gitrepos
