@@ -18,3 +18,26 @@ Host github.com
 EOF
 chmod 600 $HOME/.ssh/config
 ```
+
+# macOS
+
+* install xcode
+  * open xcode to accept license
+* install homebrew
+* brew bundle
+* install docker
+  * https://www.docker.com/docker-mac
+* gcloud auth login
+
+# ssh
+
+``` bash
+ssh-keygen -t rsa -b 4096 -C "noahwatkins@gmail.com"
+ssh-add ~/.ssh/KEYNAME
+
+$ cat .ssh/config
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github
+```
