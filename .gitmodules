@@ -4,3 +4,9 @@
 [submodule ".vim/pack/plugins/start/base16"]
 	path = .vim/pack/plugins/start/base16
 	url = https://github.com/chriskempson/base16-vim
+[submodule ".vim/pack/plugins/start/markdown"]
+	path = .vim/pack/plugins/start/markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule ".vim/pack/plugins/start/toml"]
+	path = .vim/pack/plugins/start/toml
+	url = https://github.com/cespare/vim-toml
