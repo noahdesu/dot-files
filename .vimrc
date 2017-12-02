@@ -3,18 +3,18 @@ set guioptions-=T
 set guioptions-=r
 
 filetype plugin indent on
+syntax on
+
+set background=dark
+colorscheme base16-default-dark
+
+set conceallevel=2
 
 let mapleader = ","
-
-colorscheme base16-default-dark
 
 " leave insert mode
 " TODO: remap capslock to ctrl?
 :imap <C-L> <Esc>
-
-set conceallevel=2
-
-"set nofoldenable
 
 " markdown
 let g:vim_markdown_toml_frontmatter = 1
@@ -23,6 +23,7 @@ let g:vim_markdown_folding_level = 2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=/usr/local/opt/fzf " for Homebrew
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],

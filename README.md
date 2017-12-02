@@ -42,10 +42,11 @@ Host github.com
   IdentityFile ~/.ssh/github
 ```
 
-# gnome terminal
+# terminal
 
 ```bash
 https://github.com/aaron-williamson/base16-gnome-terminal
 git clone https://github.com/aaron-williamson/base16-gnome-terminal.git ~/.config/base16-gnome-terminal
 .config/base16-gnome-terminal/color-scripts/base16-default-dark-256.sh
+https://github.com/martinlindhe/base16-iterm2
 ```

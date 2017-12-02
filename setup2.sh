@@ -107,4 +107,6 @@ link .tmux.conf
 ## TODO: ~/Library/Fonts on macOS
 #link .fonts
 #packages
-gitrepos
+#gitrepos
+link .vim
+link .vimrc
