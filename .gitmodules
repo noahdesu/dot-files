@@ -10,3 +10,6 @@
 [submodule ".vim/pack/plugins/start/toml"]
 	path = .vim/pack/plugins/start/toml
 	url = https://github.com/cespare/vim-toml
+[submodule ".vim/pack/plugins/start/fzf"]
+	path = .vim/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf.vim
