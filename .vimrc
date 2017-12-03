@@ -1,3 +1,5 @@
+set nocompatible
+
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
@@ -6,11 +8,18 @@ filetype plugin indent on
 syntax on
 
 set background=dark
-colorscheme base16-default-dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+set textwidth=80
 
 set conceallevel=2
 
+set updatetime=250
 let mapleader = ","
+set nofoldenable
 
 " leave insert mode
 " TODO: remap capslock to ctrl?
