@@ -44,6 +44,8 @@ Host github.com
 
 # terminal
 
+this is pretty sketchy stuff, just for some really nice colors
+
 ```bash
 on gnome terminal use 256 color scheme, and use base16-shell
 https://github.com/aaron-williamson/base16-gnome-terminal
@@ -52,5 +54,6 @@ https://github.com/chriskempson/base16-shell
 git clone https://github.com/aaron-williamson/base16-gnome-terminal.git ~/.config/base16-gnome-terminal
 .config/base16-gnome-terminal/color-scripts/base16-default-dark-256.sh
 
+use 256 scheme and base16 shell. base16 shell use bash_profile on mac
 https://github.com/martinlindhe/base16-iterm2
 ```
