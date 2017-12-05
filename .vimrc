@@ -1,3 +1,6 @@
+" TODO
+"  - copy cli commands from markdown files into tmux windows
+"
 set nocompatible
 
 set guioptions-=m
@@ -62,3 +65,15 @@ let g:fzf_colors = {
 " see: https://github.com/junegunn/fzf.vim#commands
 nmap ; :Buffers<CR>
 nmap <Leader>t :Files<CR>
+
+" notes
+nmap <Leader>n :Files ~/src/notes/<CR>
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+
+set cinoptions=g1,h1
+
+set number
