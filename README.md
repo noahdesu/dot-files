@@ -28,6 +28,7 @@ chmod 600 $HOME/.ssh/config
 * install docker
   * https://www.docker.com/docker-mac
 * gcloud auth login
+* xcode-select --install
 
 # ssh
 
@@ -44,7 +45,8 @@ Host github.com
 
 # terminal
 
-this is pretty sketchy stuff, just for some really nice colors
+this is pretty sketchy stuff, just for some really nice colors. as a compromise,
+try and use terminals and settings that allow us to avoid using base16-shell.
 
 ```bash
 on gnome terminal use 256 color scheme, and use base16-shell
@@ -56,4 +58,17 @@ git clone https://github.com/aaron-williamson/base16-gnome-terminal.git ~/.confi
 
 use 256 scheme and base16 shell. base16 shell use bash_profile on mac
 https://github.com/martinlindhe/base16-iterm2
+```
+
+# pass
+
+```bash
+# >> move password db to ~/.password-store
+gpg --import /path/to/public.key
+gpg --allow-secret-key-import --import /path/to/private.key
+
+# other
+#  --list-keys
+#  --list-secret-keys
+#  --edit-key <key> + trust
 ```

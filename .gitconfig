@@ -15,3 +15,9 @@
 
 [log]
     decorate = full
+
+[sendemail]
+    smtpEncryption = tls
+    smtpServer = smtp.gmail.com
+    smtpUser = noahwatkins@gmail.com
+    smtpServerPort = 587
