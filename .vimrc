@@ -16,16 +16,20 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-let g:gitgutter_override_sign_column_highlight = 0
-highlight SignColumn ctermbg=black
-highlight GitGutterAdd ctermbg=black ctermfg=green
-highlight GitGutterChange ctermbg=black ctermfg=yellow
-highlight GitGutterDelete ctermbg=black ctermfg=red
-highlight GitGutterChangeDelete ctermbg=black ctermfg=red
-let g:gitgutter_sign_added = '∙'
-let g:gitgutter_sign_modified = '∙'
-let g:gitgutter_sign_removed = '∙'
-let g:gitgutter_sign_modified_removed = '∙'
+"
+" vim-gutter. this looks like visually, but it seems to be creating some lag in
+" the editor, and i haven't yet found it to be terribly useful.
+"
+"let g:gitgutter_override_sign_column_highlight = 0
+"highlight SignColumn ctermbg=black
+"highlight GitGutterAdd ctermbg=black ctermfg=green
+"highlight GitGutterChange ctermbg=black ctermfg=yellow
+"highlight GitGutterDelete ctermbg=black ctermfg=red
+"highlight GitGutterChangeDelete ctermbg=black ctermfg=red
+"let g:gitgutter_sign_added = '∙'
+"let g:gitgutter_sign_modified = '∙'
+"let g:gitgutter_sign_removed = '∙'
+"let g:gitgutter_sign_modified_removed = '∙'
 
 set textwidth=80
 
@@ -42,6 +46,8 @@ set nofoldenable
 " markdown
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_folding_level = 2
+let g:vim_markdown_new_list_item_indent = 0
+autocmd BufNewFile,BufRead *.md setlocal formatoptions-=r
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
