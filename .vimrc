@@ -52,7 +52,8 @@ autocmd BufNewFile,BufRead *.md setlocal formatoptions-=r
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=/usr/local/opt/fzf " for Homebrew
+set rtp+=/usr/local/opt/fzf     " for Homebrew
+set rtp+=/home/nwatkins/src/fzf " from source
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],

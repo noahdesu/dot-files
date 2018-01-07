@@ -43,6 +43,10 @@ Host github.com
   IdentityFile ~/.ssh/github
 ```
 
+# fzf
+
+https://github.com/junegunn/fzf#installation
+
 # terminal
 
 this is pretty sketchy stuff, just for some really nice colors. as a compromise,
