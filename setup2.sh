@@ -2,48 +2,37 @@
 
 set -e
 
-#sudo -v
-#
-## sudo keep-alive: update existing sudo time stamp if set, otherwise do nothing.
-#while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+sudo -v
+# sudo keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 function rootuser {
-  echo "##### disable root password"
   sudo passwd -l root
-  echo "====> done"
 }
 
 function firewall {
-  echo "##### setting up firewalld"
   local curr=$(firewall-cmd --get-default-zone)
   if [ "x$curr" != "xdrop" ]; then
     sudo firewall-cmd --set-default-zone drop
   fi
-  firewall-cmd --get-active-zones
-  echo "status: $(sudo firewall-cmd --state)"
-  echo "====> done"
 }
 
 function packages {
-  echo "##### install software packages"
+  sudo dnf upgrade -y
 
-  sudo dnf update -y
-  sudo dnf install -y git vim-enhanced docker tmux pass \
-	  libu2f-host
+  sudo dnf install -y \
+    git \
+    vim-enhanced \
+    docker \
+    tmux \
+    pass \
+    libu2f-host
 
-  echo "enable/start docker"
+  # start docker on boot
   if ! systemctl is-enabled docker.service; then
     sudo systemctl enable docker
     sudo systemctl start docker
   fi
-
-  if [ ! -e .setup.packages ]; then
-    touch .setup.packages
-    echo "====> restart computer..."
-    exit 0
-  fi
-
-  echo "====> done"
 }
 
 function clonerepo {
@@ -100,13 +89,16 @@ function link() {
   ln -s $PWD/$1 $HOME/$1 || true
 }
 
-#rootuser
-#firewall
+firewall
+rootuser
+packages
 link .gitconfig
-link .tmux.conf
+#link .tmux.conf
 ## TODO: ~/Library/Fonts on macOS
 #link .fonts
-#packages
 #gitrepos
-link .vim
-link .vimrc
+#link .vim
+#link .vimrc
+
+firewall-cmd --get-active-zones
+echo "status: $(sudo firewall-cmd --state)"
