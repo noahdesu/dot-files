@@ -48,7 +48,11 @@ function clonerepo {
   local dir=$HOME/src/${BASH_REMATCH[1]}
   if [ ! -d "$dir" ]; then
     tmpdir=$(mktemp -d)
-    git clone --recursive git@github.com:${ghrepo} $tmpdir
+    echo "cloning ${ghrepo} ..."
+    git clone git@github.com:${ghrepo} $tmpdir
+    pushd $tmpdir
+    git submodule update --init --recursive
+    popd
     mv $tmpdir $dir
 
     if [ ! -z "${cmds}" ]; then
@@ -62,13 +66,13 @@ function clonerepo {
 function gitrepos {
   mkdir -p $HOME/src
 
+  clonerepo cruzdb/zlog.git
   clonerepo cruzdb/cruzdb.git
-  clonerepo noahdesu/zlog.git
   clonerepo noahdesu/thesis.git
-  clonerepo noahdesu/nwat.io.git
-  clonerepo ceph/ceph.git
-  clonerepo cfpdb/cfpdb.git npm install
-  clonerepo cfpdb/cfp.pub.git npm install
+  clonerepo noahdesu/nwat.xyz.git
+
+  #clonerepo cfpdb/cfpdb.git npm install
+  #clonerepo cfpdb/cfp.pub.git npm install
 
   #pushd $HOME/src/zlog
   #./install-deps.sh
@@ -89,16 +93,19 @@ function link() {
   ln -s $PWD/$1 $HOME/$1 || true
 }
 
-firewall
-rootuser
-packages
+#firewall
+#rootuser
+#packages
+
+link .tmux.conf
 link .gitconfig
-#link .tmux.conf
+link .vim
+link .vimrc
+
+gitrepos
+
 ## TODO: ~/Library/Fonts on macOS
 #link .fonts
-#gitrepos
-#link .vim
-#link .vimrc
 
-firewall-cmd --get-active-zones
-echo "status: $(sudo firewall-cmd --state)"
+#firewall-cmd --get-active-zones
+#echo "status: $(sudo firewall-cmd --state)"
