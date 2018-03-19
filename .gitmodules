@@ -2,14 +2,17 @@
 	path = vim2/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim
 [submodule ".vim/pack/plugins/start/base16"]
-	path = .vim/pack/plugins/start/base16
+	path = old/.vim/pack/plugins/start/base16
 	url = https://github.com/chriskempson/base16-vim
 [submodule ".vim/pack/plugins/start/markdown"]
-	path = .vim/pack/plugins/start/markdown
+	path = old/.vim/pack/plugins/start/markdown
 	url = https://github.com/plasticboy/vim-markdown.git
 [submodule ".vim/pack/plugins/start/toml"]
-	path = .vim/pack/plugins/start/toml
+	path = old/.vim/pack/plugins/start/toml
 	url = https://github.com/cespare/vim-toml
 [submodule ".vim/pack/plugins/start/fzf"]
-	path = .vim/pack/plugins/start/fzf
+	path = old/.vim/pack/plugins/start/fzf
 	url = https://github.com/junegunn/fzf.vim
+[submodule ".vim/pack/plugins/start/falcon"]
+	path = .vim/pack/plugins/start/falcon
+	url = https://github.com/fenetikm/falcon

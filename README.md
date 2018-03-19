@@ -21,14 +21,15 @@ chmod 600 $HOME/.ssh/config
 
 # macOS
 
-* install xcode
-  * open xcode to accept license
-* install homebrew
-* brew bundle
-* install docker
-  * https://www.docker.com/docker-mac
-* gcloud auth login
+* install xcode (and open to accept license)
 * xcode-select --install
+* install homebrew
+* clone dot-files and `brew bundle`
+* falcon color scheme
+  * import iterm2 settings (see https://github.com/fenetikm/falcon)
+* install fonts https://github.com/tonsky/FiraCode
+* italics in terminal https://apple.stackexchange.com/questions/249307/tic-doesnt-read-from-stdin-and-segfaults-when-adding-terminfo-to-support-italic
+* gcloud auth login
 
 # ssh
 
