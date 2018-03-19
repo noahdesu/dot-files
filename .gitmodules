@@ -16,3 +16,6 @@
 [submodule ".vim/pack/plugins/start/falcon"]
 	path = .vim/pack/plugins/start/falcon
 	url = https://github.com/fenetikm/falcon
+[submodule ".vim/pack/plugins/start/fzf.vim"]
+	path = .vim/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
